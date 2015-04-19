@@ -1,14 +1,14 @@
 name: docker
 version: 0.0.1
-inherits: wercker/ubuntu12.04-webessentials@0.0.3
+inherits: wercker/ubuntu12.04-webessentials@1.0.0
 type: main
 platform: ubuntu@12.04
 description: docker installed
 keywords:
   - docker
-    script: |
-      sudo apt-get update -y
-      sudo apt-get install -y wget linux-image-generic-lts-trusty linux-headers-generic-lts-trusty
-      wget -qO- https://get.docker.com/ | sh
-      sudo docker pull centos
-      sudo usermod -aG docker ubuntu
+script: |
+  sudo apt-get update -y
+  sudo apt-get install -y wget linux-image-generic-lts-trusty linux-headers-generic-lts-trusty
+  wget -qO- https://get.docker.com/ | sh
+  sudo docker pull centos
+  sudo usermod -aG docker ubuntu
